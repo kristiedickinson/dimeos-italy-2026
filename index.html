@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiMeos Go to Italy — June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6EE;
+    --paper: #FFFCF4;
+    --ink: #2A2520;
+    --muted: #7A7165;
+    --rule: #E5DDC9;
+    --blue: #1E4D6B;
+    --blue-deep: #143A52;
+    --sage: #6B8E5A;
+    --sage-soft: #E8EEE0;
+    --terracotta: #C0623A;
+    --terracotta-soft: #F5E2D6;
+    --gold: #C9A227;
+    --gold-soft: #F8EFC9;
+    --status-amber: #B8861B;
+    --status-amber-bg: #FBF1D5;
+    --status-green: #4F7833;
+    --status-green-bg: #E5EED9;
+    --status-orange: #B85C2E;
+    --status-orange-bg: #F8E1D2;
+    --status-blue: #2F5D7B;
+    --status-blue-bg: #DEEAF1;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: 1.2; margin: 0 0 .4em; color: var(--blue-deep); }
+  h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: -0.01em; }
+  h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); color: var(--blue); }
+  h4 { font-size: 1.05rem; color: var(--blue-deep); margin-bottom: .25em; }
+  p { margin: 0 0 1em; }
+  a { color: var(--blue); text-decoration: underline; text-decoration-color: rgba(30,77,107,.3); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--blue); }
+  em { font-family: 'Playfair Display', Georgia, serif; font-style: italic; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* NAV */
+  nav.site {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250, 246, 238, 0.92);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.site .row {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  nav.site .brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--blue-deep);
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+  nav.site ul { list-style: none; display: flex; gap: 1.4rem; margin: 0; padding: 0; }
+  nav.site a.link { font-size: .92rem; color: var(--ink); text-decoration: none; font-weight: 500; }
+  nav.site a.link:hover { color: var(--terracotta); }
+  nav.site button.menu {
+    display: none;
+    background: none; border: 0; cursor: pointer; padding: .5rem; font-size: 1.4rem; color: var(--blue-deep);
+  }
+  @media (max-width: 820px) {
+    nav.site ul { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--cream); border-bottom: 1px solid var(--rule); padding: 1rem 1.25rem 1.25rem; }
+    nav.site ul.open { display: flex; }
+    nav.site a.link { padding: .65rem 0; border-bottom: 1px dashed var(--rule); }
+    nav.site button.menu { display: block; }
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex; align-items: flex-end;
+    background: linear-gradient(180deg, rgba(20,58,82,0.10) 0%, rgba(20,58,82,0.55) 80%, rgba(20,58,82,0.75) 100%), url('hero.jpg') center/cover no-repeat;
+    color: white;
+  }
+  .hero .container { padding-top: 6rem; padding-bottom: 3rem; width: 100%; }
+  .hero .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: .8rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,.92);
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: white;
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    line-height: 1.05;
+    margin: 0 0 .8rem;
+  }
+  .hero h1 em { font-style: italic; font-weight: 400; color: #F5E2D6; }
+  .hero .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: rgba(255,255,255,.92);
+    margin-bottom: 1.5rem;
+  }
+  .hero .meta {
+    display: flex; flex-wrap: wrap; gap: .4rem 1.4rem;
+    font-size: 1rem;
+    color: rgba(255,255,255,.92);
+    border-top: 1px solid rgba(255,255,255,.3);
+    padding-top: 1.2rem;
+  }
+  .hero .meta span { display: inline-flex; align-items: center; gap: .5rem; }
+  .hero .meta .dot { width: 4px; height: 4px; background: rgba(255,255,255,.7); border-radius: 50%; }
+
+  /* SECTIONS */
+  section.zone { padding: 5rem 0; }
+  section.zone + section.zone { border-top: 1px solid var(--rule); }
+  .section-eyebrow {
+    font-size: .78rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--terracotta); font-weight: 600;
+    margin-bottom: .7rem;
+  }
+  .lede {
+    font-size: 1.1rem; color: var(--muted); max-width: 60ch;
+    margin-bottom: 2.5rem;
+  }
+
+  /* CAPACITY CALLOUT */
+  .capacity-callout {
+    background: var(--sage-soft);
+    border-left: 4px solid var(--sage);
+    padding: 1.6rem 1.8rem;
+    border-radius: 4px;
+    margin-bottom: 3rem;
+  }
+  .capacity-callout .label {
+    font-size: .78rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sage); font-weight: 700;
+    margin-bottom: .6rem;
+  }
+  .capacity-callout p { margin: 0; font-size: 1.05rem; line-height: 1.65; }
+  .capacity-callout strong { color: var(--blue-deep); }
+
+  /* DECISION CARDS */
+  .decisions-grid { display: grid; grid-template-columns: 1fr; gap: 1.4rem; }
+  @media (min-width: 760px) { .decisions-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .decision-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.6rem 1.5rem 1.4rem;
+    display: flex; flex-direction: column;
+    box-shadow: 0 1px 3px rgba(20,58,82,0.04);
+  }
+  .decision-card h3 { margin-bottom: .4rem; font-size: 1.25rem; }
+  .decision-card .desc { color: var(--muted); font-size: .94rem; margin-bottom: 1rem; flex-grow: 1; }
+  .decision-card .cost {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--blue-deep);
+    margin-bottom: .3rem;
+  }
+  .decision-card .cost-total { font-size: .85rem; color: var(--muted); margin-bottom: 1rem; font-family: 'Inter', sans-serif; }
+  .status-badge {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .78rem; font-weight: 600;
+    padding: .35rem .7rem; border-radius: 99px;
+    margin-bottom: 1rem;
+    width: fit-content;
+  }
+  .status-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; }
+  .status-amber { background: var(--status-amber-bg); color: var(--status-amber); }
+  .status-amber::before { background: var(--status-amber); }
+  .status-green { background: var(--status-green-bg); color: var(--status-green); }
+  .status-green::before { background: var(--status-green); }
+  .status-orange { background: var(--status-orange-bg); color: var(--status-orange); }
+  .status-orange::before { background: var(--status-orange); }
+  .status-blue { background: var(--status-blue-bg); color: var(--status-blue); }
+  .status-blue::before { background: var(--status-blue); }
+
+  .cta-row {
+    display: flex; flex-direction: column; gap: .5rem;
+    border-top: 1px dashed var(--rule); padding-top: 1rem;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+    background: var(--blue); color: white; padding: .65rem 1rem;
+    border-radius: 6px; text-decoration: none; font-weight: 600;
+    font-size: .9rem;
+    transition: background .15s ease;
+  }
+  .btn:hover { background: var(--blue-deep); }
+  .btn-secondary { background: transparent; color: var(--blue); border: 1px solid var(--rule); }
+  .btn-secondary:hover { background: var(--paper); border-color: var(--blue); }
+  .sub-options { display: flex; flex-direction: column; gap: .35rem; margin-top: .25rem; }
+  .sub-option {
+    font-size: .85rem; color: var(--muted);
+    padding: .55rem .75rem; background: var(--cream); border-radius: 5px;
+    border: 1px solid var(--rule);
+    text-decoration: none;
+    display: flex; justify-content: space-between; align-items: center; gap: .6rem;
+  }
+  .sub-option:hover { border-color: var(--blue); color: var(--ink); }
+  .sub-option .tag { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--sage); }
+  .sub-note { font-size: .82rem; color: var(--muted); font-style: italic; margin: .5rem 0 0; padding-left: .25rem; line-height: 1.45; }
+
+  /* MASTER VOTE CTA */
+  .vote-cta {
+    margin-top: 2.5rem;
+    background: var(--blue-deep);
+    color: white;
+    padding: 1.8rem 2rem;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; flex-wrap: wrap;
+  }
+  .vote-cta-text { flex: 1 1 280px; }
+  .vote-cta h3 { color: white; margin: 0 0 .35rem; font-size: 1.3rem; }
+  .vote-cta p { margin: 0; color: rgba(255,255,255,.85); font-size: .95rem; }
+  .btn-vote {
+    background: var(--terracotta);
+    color: white;
+    font-size: 1rem;
+    padding: .9rem 1.5rem;
+    white-space: nowrap;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background .15s ease;
+    display: inline-flex; align-items: center; gap: .5rem;
+  }
+  .btn-vote:hover { background: #a85230; }
+
+  /* MAYBE DAYS */
+  .maybe-intro {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .maybe-intro h3 { font-size: 1.6rem; margin-bottom: .25rem; }
+  .maybe-intro .sub { color: var(--muted); margin-bottom: 1.5rem; font-size: .98rem; }
+  .maybe-grid {
+    display: grid; grid-template-columns: 1fr; gap: .9rem;
+  }
+  @media (min-width: 600px) { .maybe-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px) { .maybe-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .maybe-card {
+    background: var(--paper); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 1rem 1.1rem;
+  }
+  .maybe-card .name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 500; color: var(--blue-deep); display: block; margin-bottom: .25rem; }
+  .maybe-card .meta { font-size: .8rem; color: var(--terracotta); letter-spacing: .08em; text-transform: uppercase; font-weight: 600; margin-bottom: .35rem; }
+  .maybe-card .note { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+
+  /* PACK & PLAN */
+  .pack-plan-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 760px) { .pack-plan-grid { grid-template-columns: 1fr 1fr; } }
+  .pack-card {
+    background: var(--paper); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 1.6rem 1.6rem 1.4rem;
+  }
+  .pack-card h4 { font-size: 1.15rem; margin-top: 0; }
+  .pack-card ul { padding: 0; margin: 0; list-style: none; }
+  .pack-card li {
+    padding: .55rem 0; border-bottom: 1px dashed var(--rule);
+    font-size: .94rem; color: var(--ink);
+    display: grid; grid-template-columns: auto 1fr; gap: .8rem; align-items: baseline;
+  }
+  .pack-card li:last-child { border-bottom: 0; }
+  .pack-card li .key { font-family: 'Playfair Display', serif; font-style: italic; color: var(--terracotta); font-size: .98rem; min-width: 5.5rem; }
+  .pack-card li .val { color: var(--ink); }
+  .pack-card.weather li .val { color: var(--blue-deep); }
+
+  /* YOUR WEEK */
+  .your-week {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+  }
+  .your-week .vibe-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem 2rem;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  @media (min-width: 700px) { .your-week .vibe-list { grid-template-columns: 1fr 1fr; } }
+  .your-week li {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; line-height: 1.4;
+    color: var(--blue-deep);
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .your-week li::before { content: '·'; position: absolute; left: 0; color: var(--terracotta); font-size: 1.6rem; line-height: 1; top: -.1em; }
+  .your-week li em { color: var(--sage); font-weight: 500; }
+
+  /* WHO'S COMING */
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .9rem;
+  }
+  @media (min-width: 580px) { .people-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 800px) { .people-grid { grid-template-columns: repeat(5, 1fr); } }
+  .person-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1rem .9rem;
+    text-align: center;
+    position: relative;
+  }
+  .person-card.in-villa { border-color: var(--sage); }
+  .person-card .label { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 500; color: var(--blue-deep); line-height: 1.2; }
+  .person-card .sublabel { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: .35rem; font-weight: 600; }
+  .person-card .villa-flag { position: absolute; top: .55rem; right: .6rem; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); font-weight: 700; }
+  .villa-legend {
+    margin-top: 1.2rem; font-size: .85rem; color: var(--muted);
+    display: flex; flex-wrap: wrap; gap: .35rem 1.2rem; align-items: center;
+  }
+  .villa-legend .swatch { display: inline-block; width: 12px; height: 12px; border: 1px solid var(--sage); border-radius: 3px; margin-right: .35rem; vertical-align: -2px; background: rgba(107,142,90,0.1); }
+
+  /* THE VILLA */
+  .villa-block { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 800px) { .villa-block { grid-template-columns: 1.1fr 1fr; align-items: start; } }
+  .villa-block img { width: 100%; height: auto; border-radius: 8px; display: block; box-shadow: 0 6px 20px rgba(20,58,82,0.12); }
+  .villa-block .text h3 { margin-top: 0; }
+  .villa-block .features { list-style: none; padding: 0; margin: 1rem 0 1.2rem; display: grid; grid-template-columns: 1fr 1fr; gap: .35rem 1rem; font-size: .92rem; }
+  .villa-block .features li { color: var(--muted); padding-left: 1rem; position: relative; }
+  .villa-block .features li::before { content: '◆'; position: absolute; left: 0; color: var(--sage); font-size: .55rem; top: .55em; }
+  .villa-host { font-size: .9rem; color: var(--muted); border-top: 1px dashed var(--rule); padding-top: 1rem; margin-top: 1rem; }
+
+  /* FOOD + PHRASEBOOK */
+  .food-phrase-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+  @media (min-width: 800px) { .food-phrase-grid { grid-template-columns: 1fr 1fr; } }
+  .food-list { list-style: none; padding: 0; margin: 0; }
+  .food-list li {
+    padding: 1rem 0; border-bottom: 1px solid var(--rule);
+    display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: baseline;
+  }
+  .food-list li:last-child { border-bottom: 0; }
+  .food-list .name { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--terracotta); font-weight: 500; }
+  .food-list .note { font-size: .92rem; color: var(--muted); }
+
+  .phrasebook {
+    background: var(--terracotta-soft);
+    border: 1px solid #ECCEB8;
+    border-radius: 8px;
+    padding: 1.8rem 1.6rem;
+  }
+  .phrasebook h3 { color: var(--terracotta); margin-top: 0; }
+  .phrasebook ol { padding: 0; margin: 0; list-style: none; counter-reset: phrase; }
+  .phrasebook li {
+    counter-increment: phrase;
+    padding: .65rem 0;
+    border-bottom: 1px dashed rgba(192,98,58,0.25);
+    position: relative;
+  }
+  .phrasebook li:last-child { border-bottom: 0; }
+  .phrasebook .it { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--blue-deep); margin-right: .5rem; }
+  .phrasebook .pron { font-size: .8rem; color: var(--terracotta); font-weight: 500; }
+  .phrasebook .en { display: block; font-size: .92rem; color: var(--muted); margin-top: .15rem; }
+
+  /* FLIGHTS */
+  .flights-note {
+    background: var(--gold-soft);
+    border-left: 3px solid var(--gold);
+    padding: .9rem 1.2rem;
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
+    font-size: .92rem;
+  }
+  table.flights {
+    width: 100%; border-collapse: collapse;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 8px; overflow: hidden;
+    font-size: .92rem;
+  }
+  table.flights thead th {
+    background: var(--blue-deep); color: white;
+    text-align: left; padding: .85rem 1rem;
+    font-size: .8rem; letter-spacing: .1em; text-transform: uppercase;
+    font-weight: 600;
+  }
+  table.flights td {
+    padding: .85rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.flights tbody tr:last-child td { border-bottom: 0; }
+  table.flights tbody tr:nth-child(even) { background: rgba(232, 238, 224, 0.3); }
+  table.flights .traveler { font-weight: 600; color: var(--blue-deep); }
+  table.flights .placeholder { color: #B5AC9C; font-style: italic; }
+  @media (max-width: 640px) {
+    table.flights { font-size: .85rem; }
+    table.flights thead th, table.flights td { padding: .65rem .7rem; }
+  }
+
+  /* GETTING AROUND */
+  .transit-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 700px) { .transit-grid { grid-template-columns: 1fr 1fr; } }
+  .transit-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 1.4rem 1.4rem 1.2rem;
+    border-radius: 8px;
+  }
+  .transit-card h4 { color: var(--blue-deep); display: flex; align-items: center; gap: .5rem; }
+  .transit-card .icon { color: var(--terracotta); font-size: 1.2rem; }
+  .transit-card ul { padding-left: 1.1rem; margin: .5rem 0 0; }
+  .transit-card li { margin-bottom: .3rem; font-size: .94rem; color: var(--ink); }
+  .transit-card li strong { color: var(--blue-deep); }
+  .transit-card .small { font-size: .82rem; color: var(--muted); margin-top: .8rem; }
+
+  .day-trips { margin-top: 2rem; }
+  .day-trip-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .6rem;
+    list-style: none; padding: 0; margin: 0;
+  }
+  @media (min-width: 600px) { .day-trip-list { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px) { .day-trip-list { grid-template-columns: 1fr 1fr 1fr; } }
+  .day-trip-list li {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 6px;
+    padding: .85rem 1rem;
+    font-size: .92rem;
+  }
+  .day-trip-list .place { font-family: 'Playfair Display', serif; font-weight: 500; color: var(--blue-deep); display: block; margin-bottom: .15rem; }
+  .day-trip-list .meta { font-size: .8rem; color: var(--muted); }
+
+  /* FOOTER */
+  footer.site {
+    background: var(--blue-deep); color: rgba(255,255,255,.85);
+    padding: 3rem 0 2.5rem;
+    margin-top: 4rem;
+    text-align: center;
+  }
+  footer.site .credit { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.15rem; color: white; margin-bottom: .5rem; }
+  footer.site a { color: #F5E2D6; }
+  footer.site .small { font-size: .82rem; color: rgba(255,255,255,.6); margin-top: 1.5rem; }
+  footer.site hr { border: 0; border-top: 1px solid rgba(255,255,255,.15); max-width: 80px; margin: 1.5rem auto; }
+
+  /* PRINT */
+  @media print {
+    nav.site, .hero { display: none; }
+    body { background: white; color: black; font-size: 11pt; }
+    h1, h2, h3, h4 { color: black; }
+    .container { max-width: 100%; padding: 0; }
+    section.zone { padding: 1rem 0; page-break-inside: avoid; }
+    section.zone + section.zone { border-top: 1px solid #ccc; }
+    .decision-card, .person-card, .villa-block img, .transit-card, table.flights, .your-week, .phrasebook, .capacity-callout, .day-trip-list li { box-shadow: none !important; background: white !important; border: 1px solid #ccc !important; }
+    .btn, .sub-option { background: white !important; color: black !important; border: 1px solid #999 !important; }
+    a { color: black; text-decoration: none; }
+    footer.site { background: white; color: black; border-top: 2px solid black; padding-top: 1rem; }
+    footer.site .credit, footer.site a, footer.site .small { color: black; }
+    .villa-block img { max-height: 3in; object-fit: cover; }
+    .status-badge { border: 1px solid #999 !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="container row">
+    <a href="#top" class="brand">DiMeos go to Italy</a>
+    <ul id="navlinks">
+      <li><a class="link" href="#decisions">Decisions</a></li>
+      <li><a class="link" href="#your-week">Your Week</a></li>
+      <li><a class="link" href="#whos-coming">Who's Coming</a></li>
+      <li><a class="link" href="#villa">The Villa</a></li>
+      <li><a class="link" href="#food">Food</a></li>
+      <li><a class="link" href="#pack">Pack</a></li>
+      <li><a class="link" href="#flights">Flights</a></li>
+      <li><a class="link" href="#getting-around">Getting Around</a></li>
+    </ul>
+    <button class="menu" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <div class="eyebrow">Recco · Italian Riviera · Liguria</div>
+    <h1>DiMeos go to <em>Italy</em></h1>
+    <div class="subtitle">Una settimana sulla Riviera Italiana</div>
+    <div class="meta">
+      <span><strong>June 12 – 19, 2026</strong></span>
+      <span class="dot"></span>
+      <span>7 nights</span>
+      <span class="dot"></span>
+      <span>15 of us</span>
+      <span class="dot"></span>
+      <span>One villa over the sea</span>
+    </div>
+  </div>
+</header>
+
+<section class="zone" id="decisions">
+  <div class="container">
+    <div class="section-eyebrow">Pending decisions</div>
+    <h2>What we need to lock in</h2>
+    <p class="lede">A few things need to be decided and pre-booked before we get there. Read these, talk it over with the family, then email Jenna with your input.</p>
+
+    <div class="capacity-callout">
+      <div class="label">Start here · The bigger question</div>
+      <p>We have <strong>7 nights and 6 full days</strong>. With jet-lag recovery, town walks, beach time, long lunches, and unplanned exploration, <strong>2–3 paid excursions is realistic</strong>. More than that and we're managing logistics instead of being on vacation. So the first decision isn't <em>which day</em> — it's <strong>which 2–3 of the options below do we want to lock in?</strong></p>
+    </div>
+
+    <div class="decisions-grid">
+
+      <div class="decision-card">
+        <h3>Cinque Terre Boat Tour</h3>
+        <span class="status-badge status-amber">Awaiting group input</span>
+        <p class="desc">Five cliffside villages by sea — the iconic way to see Cinque Terre. Group of 15 means we'd need two boats.</p>
+        <div class="cost">~$143 / person</div>
+        <div class="cost-total">≈ $2,145 for the group (two boats)</div>
+        <div class="cta-row">
+          <div class="sub-options">
+            <a class="sub-option" href="https://www.viator.com/tours/Monterosso-al-Mare/Cinque-Terre-boat-trip-with-hybrid-boat-Eco-friendly-tour/d51036-51921P79" target="_blank" rel="noopener">
+              <span>Option A · Hybrid eco boat</span>
+              <span>↗</span>
+            </a>
+            <a class="sub-option" href="https://www.viator.com/tours/Monterosso-al-Mare/Cinque-Terre-Sunset-Tour-Experience/d51036-132095P2" target="_blank" rel="noopener">
+              <span>Option B · Sunset tour <span class="tag">recommended</span></span>
+              <span>↗</span>
+            </a>
+            <p class="sub-note">Option B has a restroom on board — a real factor on a 3+ hour boat trip with 15 people. It's also at sunset, which makes the cliffside villages glow.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="decision-card">
+        <h3>Private Chef at the Villa</h3>
+        <span class="status-badge status-amber">Awaiting group input</span>
+        <p class="desc">A <em>Cesarina</em> — a passionate local home chef from Italy's Slow Food network — cooks a personalized three-course meal at the villa. Starter, fresh pasta, dessert. Local wines, kitchen cleanup included. Menu customized after booking.</p>
+        <div class="cost">€104 / person</div>
+        <div class="cost-total">≈ €1,560 for the group · booked through Jenna</div>
+      </div>
+
+      <div class="decision-card">
+        <h3>Pesto Class at <em>Nessun Dorma</em></h3>
+        <span class="status-badge status-amber">Awaiting group input</span>
+        <p class="desc">Hands-on pesto-making with a Carrara marble mortar in Cinque Terre. Basil harvest, technique, tasting. Lunch + Ligurian wine + sommelier. Apron included. Prize for best pesto.</p>
+        <div class="cost">€85 / person</div>
+        <div class="cost-total">Up to the group — could be a subset, not all 15</div>
+        <div class="cta-row">
+          <a class="sub-option" href="https://www.instagram.com/nessundormacinqueterre" target="_blank" rel="noopener">
+            <span>See Nessun Dorma on Instagram</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="vote-cta">
+      <div class="vote-cta-text">
+        <h3>Ready to weigh in?</h3>
+        <p>One email covers all three votes. Open it, fill in your y/n's and any notes, and send. Jenna will tally and update this page.</p>
+      </div>
+      <a class="btn-vote" href="mailto:jenna.dickinson@fora.travel?subject=My%20excursion%20votes%20%E2%80%94%20DiMeos%20Italy%202026&body=Hi%20Jenna%2C%0A%0AMy%20name%3A%20%0A%0AMy%20votes%3A%0A%0A1.%20CINQUE%20TERRE%20BOAT%20TOUR%0A%20%20%20(%20)%20Yes%20%E2%80%94%20Option%20A%20(hybrid%20eco%20boat)%0A%20%20%20(%20)%20Yes%20%E2%80%94%20Option%20B%20(sunset%20tour%2C%20has%20restroom)%0A%20%20%20(%20)%20No%0A%0A2.%20PRIVATE%20CHEF%20AT%20THE%20VILLA%20(Cesarine)%0A%20%20%20(%20)%20Yes%0A%20%20%20(%20)%20No%0A%0A3.%20PESTO%20CLASS%20AT%20NESSUN%20DORMA%0A%20%20%20(%20)%20Yes%20%E2%80%94%20count%20me%20in%0A%20%20%20(%20)%20Open%20to%20a%20subset%20going%20without%20me%0A%20%20%20(%20)%20No%0A%0ANotes%20or%20questions%3A%0A%0A%0AThanks!"><span>📨</span><span>Send your votes to Jenna</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="your-week">
+  <div class="container">
+    <div class="section-eyebrow">The shape of the trip</div>
+    <h2>Your Week</h2>
+    <p class="lede">Not a schedule — a feel. This is what a slow week on the Riviera looks like.</p>
+
+    <div class="your-week">
+      <ul class="vibe-list">
+        <li>Slow mornings on the terrace · <em>espresso, focaccia from the bakery up the road</em></li>
+        <li>Long, lingering lunches that turn into pool afternoons</li>
+        <li>Walks down the hill into Recco for cheese-stuffed focaccia</li>
+        <li>Quiet villa days for the people who need them</li>
+        <li>A ferry to Camogli when we feel like it · <em>10 minutes by bus</em></li>
+        <li>One or two big day trips · <em>the ones we agreed on above</em></li>
+        <li>Grill nights on the terrace with market ingredients</li>
+        <li>Sunset wine on the balcony · <em>every single night</em></li>
+      </ul>
+    </div>
+
+    <div class="maybe-intro">
+      <h3>Maybe Days</h3>
+      <p class="sub">No booking required. Day-of decisions, depending on the weather, the mood, and how tired we are. Pick any of these in the morning and go.</p>
+
+      <div class="maybe-grid">
+        <div class="maybe-card">
+          <span class="meta">10 min by bus</span>
+          <span class="name">Camogli</span>
+          <span class="note">Colorful fishing village, pebble beach, the seafood you'd hope for. Easiest day out from the villa.</span>
+        </div>
+        <div class="maybe-card">
+          <span class="meta">30 min · ferry from Camogli</span>
+          <span class="name">Portofino afternoon</span>
+          <span class="note">Iconic harbor. Arriving by boat is the entrance. Stay for an aperitivo and head back.</span>
+        </div>
+        <div class="maybe-card">
+          <span class="meta">30 min by train</span>
+          <span class="name">A day in Genoa</span>
+          <span class="note">UNESCO old town, Cathedral of San Lorenzo, ice-cream-colored Boccadasse for famous gelato.</span>
+        </div>
+        <div class="maybe-card">
+          <span class="meta">30 min by train</span>
+          <span class="name">Sestri Levante</span>
+          <span class="note">Bay of Silence and Bay of Fables. Slower, quieter, easy beach day.</span>
+        </div>
+        <div class="maybe-card">
+          <span class="meta">~1 hr by train</span>
+          <span class="name">Cinque Terre by train</span>
+          <span class="note">If we don't end up booking the boat — DIY the five villages on the regional rail. Go early.</span>
+        </div>
+        <div class="maybe-card">
+          <span class="meta">Half-day · moderate hike</span>
+          <span class="name">Camogli → San Fruttuoso</span>
+          <span class="note">A coastal trail to a hidden bay with a 13th-century abbey. Ferry back if anyone's tired.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="whos-coming">
+  <div class="container">
+    <div class="section-eyebrow">Fifteen of us</div>
+    <h2>Who's coming</h2>
+    <p class="lede">Five couples, five flying solo. Six confirmed in the main villa so far — sleeping arrangements still being worked out.</p>
+
+    <div class="people-grid">
+      <div class="person-card in-villa"><div class="villa-flag">villa</div><div class="label">Dave &amp; Diane</div></div>
+      <div class="person-card in-villa"><div class="villa-flag">villa</div><div class="label">Jenna &amp; Brandon</div><div class="sublabel">Planner</div></div>
+      <div class="person-card"><div class="label">Maureen &amp; Jim</div></div>
+      <div class="person-card"><div class="label">Sue &amp; Chuck</div></div>
+      <div class="person-card"><div class="label">John &amp; Shari</div></div>
+      <div class="person-card in-villa"><div class="villa-flag">villa</div><div class="label">Katie</div></div>
+      <div class="person-card in-villa"><div class="villa-flag">villa</div><div class="label">Kristie</div></div>
+      <div class="person-card"><div class="label">Bob</div></div>
+      <div class="person-card"><div class="label">James</div></div>
+      <div class="person-card"><div class="label">Peter</div><div class="sublabel">TBD</div></div>
+    </div>
+
+    <div class="villa-legend">
+      <span><span class="swatch"></span> In the main villa so far</span>
+      <span style="margin-left: auto; font-style: italic;">More room available — being worked out with Jenna</span>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="villa">
+  <div class="container">
+    <div class="section-eyebrow">Home for the week</div>
+    <h2>Blue Blue Sea</h2>
+    <p class="lede">A former farmhouse, lovingly restored. Hillside above Recco, walking distance to the beach and town.</p>
+
+    <div class="villa-block">
+      <img src="villa.jpg" alt="The villa pool with hillside town view">
+      <div class="text">
+        <h3>The place</h3>
+        <p>Exposed wooden beams, original majolica tiles, a stone fireplace in the living room. Whitewashed bedrooms full of Mediterranean light. A swimming pool with views over town. Outdoor terrace built for long lunches. A barbecue for grill nights and a balcony made for sunset wine.</p>
+
+        <h4>What's there</h4>
+        <ul class="features">
+          <li>Pool + sun loungers</li>
+          <li>Terrace + barbecue</li>
+          <li>Sunset balcony</li>
+          <li>Hillside herb gardens</li>
+          <li>Antique Genovese oven</li>
+          <li>Full kitchen + dishwasher</li>
+          <li>Main villa + 2-bed annexe</li>
+          <li>Walk to beach &amp; town</li>
+        </ul>
+
+        <p class="villa-host"><strong>Host:</strong> Emma · <a href="https://www.plumguide.com/homes/40282/blue-blue-sea" target="_blank" rel="noopener">Listing on Plum Guide ↗</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="food">
+  <div class="container">
+    <div class="section-eyebrow">What to look forward to</div>
+    <h2>Food &amp; a few words</h2>
+    <p class="lede">Recco is the birthplace of <em>focaccia col formaggio</em>. Pesto was invented in this region. Bring your appetite — and these phrases.</p>
+
+    <div class="food-phrase-grid">
+
+      <ul class="food-list">
+        <li>
+          <span class="name">Focaccia col formaggio</span>
+          <span class="note">Recco's signature: paper-thin focaccia stuffed with fresh Stracchino. The best in the world is here.</span>
+        </li>
+        <li>
+          <span class="name">Pesto Genovese</span>
+          <span class="note">Invented in Liguria. Order it on trofie pasta with local Genovese basil.</span>
+        </li>
+        <li>
+          <span class="name">Focaccia di Recco</span>
+          <span class="note">The thick, dimpled, olive-oil-soaked kind — at every bakery, all day.</span>
+        </li>
+        <li>
+          <span class="name">Gelato at Boccadasse</span>
+          <span class="note">A 30-minute train into Genoa. Ice-cream-colored fishing village. Famous gelato.</span>
+        </li>
+        <li>
+          <span class="name">Vermentino &amp; Pigato</span>
+          <span class="note">Crisp Ligurian whites — order them by the carafe.</span>
+        </li>
+        <li>
+          <span class="name">Grill night at the villa</span>
+          <span class="note">Hit the local market, fire up the BBQ, eat on the terrace.</span>
+        </li>
+      </ul>
+
+      <div class="phrasebook">
+        <h3>Ten Italian phrases</h3>
+        <ol>
+          <li><span class="it">Buongiorno</span> <span class="pron">(bwon-JOR-noh)</span><span class="en">Hello / good morning — until about 5pm</span></li>
+          <li><span class="it">Buonasera</span> <span class="pron">(bwoh-nah-SEH-rah)</span><span class="en">Good evening</span></li>
+          <li><span class="it">Ciao</span> <span class="pron">(CHOW)</span><span class="en">Hi or bye — informal, with people you know</span></li>
+          <li><span class="it">Per favore</span> <span class="pron">(pehr fah-VOH-reh)</span><span class="en">Please</span></li>
+          <li><span class="it">Grazie</span> <span class="pron">(GRAHT-zee-eh)</span><span class="en">Thank you</span></li>
+          <li><span class="it">Prego</span> <span class="pron">(PREH-goh)</span><span class="en">You're welcome / after you / go ahead — the magic catch-all</span></li>
+          <li><span class="it">Scusi</span> <span class="pron">(SKOO-zee)</span><span class="en">Excuse me</span></li>
+          <li><span class="it">Un caffè, per favore</span> <span class="pron">(oon kahf-FEH)</span><span class="en">An espresso, please — "caffè" alone always means espresso</span></li>
+          <li><span class="it">Il conto, per favore</span> <span class="pron">(eel KOHN-toh)</span><span class="en">The check, please — they won't bring it until you ask</span></li>
+          <li><span class="it">Cin cin!</span> <span class="pron">(CHEEN cheen)</span><span class="en">Cheers!</span></li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="pack">
+  <div class="container">
+    <div class="section-eyebrow">Before you fly</div>
+    <h2>Pack &amp; Plan</h2>
+    <p class="lede">June in Liguria is warm, sunny, and made for being outside. Pack light, but pack smart — there's a lot of walking on cobblestones and uphill paths.</p>
+
+    <div class="pack-plan-grid">
+      <div class="pack-card weather">
+        <h4>Weather, mid-June</h4>
+        <ul>
+          <li><span class="key">Highs</span><span class="val">75–80°F · 24–27°C</span></li>
+          <li><span class="key">Lows</span><span class="val">~60°F · 15–16°C (cool evenings)</span></li>
+          <li><span class="key">Sea</span><span class="val">~70°F · 21°C — warm enough to swim</span></li>
+          <li><span class="key">Sun</span><span class="val">Mostly sunny; occasional afternoon thunderstorms</span></li>
+          <li><span class="key">Daylight</span><span class="val">Long — sunset around 9pm</span></li>
+        </ul>
+      </div>
+
+      <div class="pack-card">
+        <h4>What to bring</h4>
+        <ul>
+          <li><span class="key">Shoes</span><span class="val">Comfortable walking shoes — cobblestones and steep village steps. Save the cute ones for one or two dinners.</span></li>
+          <li><span class="key">Swim</span><span class="val">Suit, sunhat, reef-safe sunscreen, beach towel.</span></li>
+          <li><span class="key">Layers</span><span class="val">Light sweater or jacket for evenings, boats, and air-conditioned trains.</span></li>
+          <li><span class="key">Churches</span><span class="val">Something to cover shoulders and knees — many churches enforce it.</span></li>
+          <li><span class="key">Adapter</span><span class="val">Italy uses Type C / F / L plugs. A Type-C adapter covers most outlets.</span></li>
+          <li><span class="key">Cash</span><span class="val">Some euros for tabacchi, gelato, small fares — most places take card.</span></li>
+          <li><span class="key">Bottle</span><span class="val">Refillable water bottle. Public fountains are everywhere and the water is great.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="flights">
+  <div class="container">
+    <div class="section-eyebrow">Getting there</div>
+    <h2>Flights</h2>
+
+    <div class="flights-note">
+      ✈️ <strong>Send your flight details to Jenna</strong> at <a href="mailto:jenna.dickinson@fora.travel">jenna.dickinson@fora.travel</a> and she'll keep this table updated.
+    </div>
+
+    <table class="flights">
+      <thead>
+        <tr>
+          <th>Traveler(s)</th>
+          <th>Outbound</th>
+          <th>Return</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="traveler">Dave &amp; Diane</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+        <tr><td class="traveler">Jenna &amp; Brandon</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+        <tr><td class="traveler">Maureen &amp; Jim</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+        <tr><td class="traveler">Sue &amp; Chuck</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+        <tr><td class="traveler">John &amp; Shari</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+        <tr><td class="traveler">Katie</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+        <tr><td class="traveler">Kristie</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+        <tr><td class="traveler">Bob</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+        <tr><td class="traveler">James</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+        <tr><td class="traveler">Peter</td><td class="placeholder">TBD</td><td class="placeholder">TBD</td><td class="placeholder">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="zone" id="getting-around">
+  <div class="container">
+    <div class="section-eyebrow">On the ground</div>
+    <h2>Getting there &amp; getting around</h2>
+    <p class="lede">No rental car needed. The Italian Riviera is built for trains, buses, and ferries — and once you arrive, your villa is walking distance to the beach and town.</p>
+
+    <div class="transit-grid">
+      <div class="transit-card">
+        <h4><span class="icon">✈</span> Boston → Recco</h4>
+        <ul>
+          <li>Fly <strong>Boston → Milan</strong>, Thursday June 11, arriving Friday June 12.</li>
+          <li>Milan → Recco: ~2hr drive, or scenic train from <strong>Milano Centrale → Recco FS</strong> (~2hr).</li>
+          <li><strong>Genoa (GBA)</strong> is the nearest regional airport — only ~30 min from Recco.</li>
+        </ul>
+      </div>
+
+      <div class="transit-card">
+        <h4><span class="icon">🚌</span> Buses</h4>
+        <ul>
+          <li>Provider: <strong>AMT Genova</strong> (formerly ATP Esercizio).</li>
+          <li>Buy tickets: any <em>Tabaccheria</em> shop, or the AMT Genova app. Live tracking: Moovit.</li>
+          <li><strong>Villa's stop:</strong> Via Montefiorito F. 40 — Route <strong>772</strong>.</li>
+          <li><strong>773</strong> connects Santa Margherita, Ruta, Camogli, Recco. <strong>775</strong> Genova ↔ Recco ↔ Rapallo. <strong>776</strong> Genova → Recco → Uscio.</li>
+          <li>On-call (CHIAMA) bus for some districts: <strong>800-499-999</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="transit-card">
+        <h4><span class="icon">🚆</span> Trains &amp; ferries</h4>
+        <ul>
+          <li>The coastal rail line connects every Riviera town. <strong>Recco FS</strong> is close to the villa.</li>
+          <li>Summer ferries link Camogli, Santa Margherita Ligure, Portofino, and Cinque Terre.</li>
+          <li>The Camogli → Portofino ferry is the iconic way to arrive in Portofino.</li>
+        </ul>
+      </div>
+
+      <div class="transit-card">
+        <h4><span class="icon">🚐</span> Long-distance</h4>
+        <ul>
+          <li><strong>FlixBus</strong> from Milan (~1hr 45min) and Genoa.</li>
+          <li><strong>BlaBlaCar Bus</strong> from Milan and Turin.</li>
+          <li>Both are cheap; book ahead in summer.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="day-trips">
+      <h3>Day trips from Recco</h3>
+      <ul class="day-trip-list">
+        <li><span class="place">Camogli</span><span class="meta">~10 min by bus · colorful fishing village, pebbled beach, great seafood</span></li>
+        <li><span class="place">Portofino</span><span class="meta">~30 min · arrive by ferry from Camogli for the best entrance</span></li>
+        <li><span class="place">Genoa</span><span class="meta">~30 min by train · UNESCO old town, San Lorenzo, Boccadasse</span></li>
+        <li><span class="place">Santa Margherita Ligure</span><span class="meta">~30 min · elegant promenade, ferry hub for Portofino</span></li>
+        <li><span class="place">Sestri Levante</span><span class="meta">~30 min by train · Bay of Silence + Bay of Fables</span></li>
+        <li><span class="place">Cinque Terre</span><span class="meta">~1hr by train · five cliffside villages; Monterosso has the best beach; go early or by boat</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <div class="credit">Planned with love by Jenna Dickinson</div>
+    <div><a href="mailto:jenna.dickinson@fora.travel">jenna.dickinson@fora.travel</a> · (978) 460-4421</div>
+    <div style="font-size: .85rem; color: rgba(255,255,255,.7); margin-top: .25rem;">FORA Travel Advisor</div>
+    <hr>
+    <div class="small">Website designed by Kristie Dickinson-Latta</div>
+  </div>
+</footer>
+
+</body>
+</html>
